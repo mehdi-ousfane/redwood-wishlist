@@ -11,10 +11,12 @@ export const schema = gql`
     wishList: [WishList]!
     thankYou: [ThankYou]!
   }
-
+  """
+  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
+  """
   type Query {
-    events: [Event!]! @requireAuth
-    event(id: String!): Event @requireAuth
+    events: [Event!]! @skipAuth
+    event(id: String!): Event @skipAuth
   }
 
   input CreateEventInput {
@@ -28,10 +30,12 @@ export const schema = gql`
     date: DateTime
     sendReminder: Boolean
   }
-
+  """
+  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
+  """
   type Mutation {
-    createEvent(input: CreateEventInput!): Event! @requireAuth
-    updateEvent(id: String!, input: UpdateEventInput!): Event! @requireAuth
-    deleteEvent(id: String!): Event! @requireAuth
+    createEvent(input: CreateEventInput!): Event! @skipAuth
+    updateEvent(id: String!, input: UpdateEventInput!): Event! @skipAuth
+    deleteEvent(id: String!): Event! @skipAuth
   }
 `
