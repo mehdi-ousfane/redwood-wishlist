@@ -30,10 +30,6 @@ export const schema = gql`
 
   input CreateUserInput {
     email: String!
-    hashedPassword: String!
-    salt: String!
-    resetToken: String
-    resetTokenExpiresAt: DateTime
     firstName: String
     lastName: String
     avatar: String
@@ -42,10 +38,6 @@ export const schema = gql`
 
   input UpdateUserInput {
     email: String
-    hashedPassword: String
-    salt: String
-    resetToken: String
-    resetTokenExpiresAt: DateTime
     firstName: String
     lastName: String
     avatar: String
