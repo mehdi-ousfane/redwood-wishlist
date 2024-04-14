@@ -19,7 +19,6 @@ const SignupPage = () => {
     }
   }, [isAuthenticated])
 
-  // focus on email box on page load
   const emailRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
     emailRef.current?.focus()
