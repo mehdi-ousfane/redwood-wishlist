@@ -5,7 +5,6 @@
 // Examples:
 //
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
-// 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, PrivateSet, Set } from '@redwoodjs/router'
 
