@@ -1,20 +1,16 @@
-import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-const GroupInvitePage = () => {
+import EventHeaderCell from 'src/components/EventHeaderCell'
+import InviteGroup from 'src/components/InviteGroup/InviteGroup'
+
+const GroupInvitePage = ({ id }) => {
   return (
     <>
-      <MetaTags title="GroupInvite" description="GroupInvite page" />
+      <MetaTags title="Invite Friends and Family" />
 
-      <h1>GroupInvitePage</h1>
-      <p>
-        Find me in{' '}
-        <code>./web/src/pages/GroupInvitePage/GroupInvitePage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>groupInvite</code>, link to me with `
-        <Link to={routes.groupInvite()}>GroupInvite</Link>`
-      </p>
+      <EventHeaderCell id={id} />
+
+      <InviteGroup id={id} />
     </>
   )
 }
