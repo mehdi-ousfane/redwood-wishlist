@@ -6,14 +6,12 @@ export const schema = gql`
     createdAt: DateTime!
     updatedAt: DateTime!
     sendReminder: Boolean!
-    userStatus: [UserStatus]!
-    pairings: [Pairing]!
+    invite: [Invite]!
+    pairing: [Pairing]!
     wishList: [WishList]!
     thankYou: [ThankYou]!
   }
-  """
-  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
-  """
+
   type Query {
     events: [Event!]! @skipAuth
     event(id: String!): Event @skipAuth
@@ -30,9 +28,7 @@ export const schema = gql`
     date: DateTime
     sendReminder: Boolean
   }
-  """
-  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
-  """
+
   type Mutation {
     createEvent(input: CreateEventInput!): Event! @skipAuth
     updateEvent(id: String!, input: UpdateEventInput!): Event! @skipAuth

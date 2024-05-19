@@ -2,13 +2,12 @@ export const schema = gql`
   type User {
     id: Int!
     email: String!
-    firstName: String
-    lastName: String
+    name: String
     avatar: String
     createdAt: DateTime!
     updatedAt: DateTime!
     role: Role!
-    status: [UserStatus]!
+    invite: [Invite]!
     santa: [Pairing]!
     person: [Pairing]!
     wishList: [WishList]!
@@ -20,9 +19,7 @@ export const schema = gql`
     ADMIN
     USER
   }
-  """
-  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
-  """
+
   type Query {
     users: [User!]! @skipAuth
     user(id: Int!): User @skipAuth
@@ -44,9 +41,6 @@ export const schema = gql`
     role: Role
   }
 
-  """
-  REMEMBER TO REQUIRE AUTH HERE FOR PRODUCTION !
-  """
   type Mutation {
     createUser(input: CreateUserInput!): User! @skipAuth
     updateUser(id: Int!, input: UpdateUserInput!): User! @skipAuth
