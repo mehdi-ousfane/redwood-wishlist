@@ -1,4 +1,4 @@
-import formatRelative from 'date-fns/formatRelative'
+import { formatRelative } from 'date-fns'
 
 export const prettifyDate = (dateString) => {
   const date = new Date(dateString)
