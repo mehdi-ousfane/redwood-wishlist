@@ -1,7 +1,7 @@
 interface ButtonProps {
   children: JSX.Element | string
   className?: string
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+  handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   size?: 'large' | 'medium' | 'small'
 }
 
