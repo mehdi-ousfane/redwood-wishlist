@@ -12,8 +12,8 @@ export const schema = gql`
   }
 
   type Query {
-    thankYous: [ThankYou!]! @requireAuth
-    thankYou(id: Int!): ThankYou @requireAuth
+    thankYous: [ThankYou!]! @skipAuth
+    thankYou(id: Int!): ThankYou @skipAuth
   }
 
   input CreateThankYouInput {
@@ -31,9 +31,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createThankYou(input: CreateThankYouInput!): ThankYou! @requireAuth
-    updateThankYou(id: Int!, input: UpdateThankYouInput!): ThankYou!
-      @requireAuth
-    deleteThankYou(id: Int!): ThankYou! @requireAuth
+    createThankYou(input: CreateThankYouInput!): ThankYou! @skipAuth
+    updateThankYou(id: Int!, input: UpdateThankYouInput!): ThankYou! @skipAuth
+    deleteThankYou(id: Int!): ThankYou! @skipAuth
   }
 `

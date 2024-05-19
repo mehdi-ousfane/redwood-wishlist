@@ -16,8 +16,8 @@ export const schema = gql`
   }
 
   type Query {
-    wishLists: [WishList!]! @requireAuth
-    wishList(id: Int!): WishList @requireAuth
+    wishLists: [WishList!]! @skipAuth
+    wishList(id: Int!): WishList @skipAuth
   }
 
   input CreateWishListInput {
@@ -43,9 +43,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createWishList(input: CreateWishListInput!): WishList! @requireAuth
-    updateWishList(id: Int!, input: UpdateWishListInput!): WishList!
-      @requireAuth
-    deleteWishList(id: Int!): WishList! @requireAuth
+    createWishList(input: CreateWishListInput!): WishList! @skipAuth
+    updateWishList(id: Int!, input: UpdateWishListInput!): WishList! @skipAuth
+    deleteWishList(id: Int!): WishList! @skipAuth
   }
 `

@@ -12,8 +12,8 @@ export const schema = gql`
   }
 
   type Query {
-    pairings: [Pairing!]! @requireAuth
-    pairing(id: Int!): Pairing @requireAuth
+    pairings: [Pairing!]! @skipAuth
+    pairing(id: Int!): Pairing @skipAuth
   }
 
   input CreatePairingInput {
@@ -29,8 +29,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createPairing(input: CreatePairingInput!): Pairing! @requireAuth
-    updatePairing(id: Int!, input: UpdatePairingInput!): Pairing! @requireAuth
-    deletePairing(id: Int!): Pairing! @requireAuth
+    createPairing(input: CreatePairingInput!): Pairing! @skipAuth
+    updatePairing(id: Int!, input: UpdatePairingInput!): Pairing! @skipAuth
+    deletePairing(id: Int!): Pairing! @skipAuth
   }
 `
