@@ -7,9 +7,9 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/auth-dbauth-setup": "6.4.1",
-    "@redwoodjs/cli-storybook": "6.4.1",
-    "@redwoodjs/core": "6.4.1",
+    "@redwoodjs/auth-dbauth-setup": "7.5.1",
+    "@redwoodjs/cli-storybook": "7.5.1",
+    "@redwoodjs/core": "7.5.1",
     "prettier-plugin-tailwindcss": "0.4.1"
   },
   "eslintConfig": {
@@ -17,7 +17,7 @@
     "root": true
   },
   "engines": {
-    "node": "=18.x",
+    "node": ">=20.x",
     "yarn": ">=1.15"
   },
   "prisma": {
